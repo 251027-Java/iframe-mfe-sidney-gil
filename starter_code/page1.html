@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f8ff;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <h1>Application 1</h1>
+    <p>This is the first micro-frontend application loaded in an iFrame.</p>
+    <button onclick="changeShellColor()">Change Shell Color</button>
+
+    <script>
+        function changeShellColor() {
+            window.parent.postMessage({ type: 'changeColor' }, '*');
+        }
+    </script>
+</body>
+</html>
